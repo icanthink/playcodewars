@@ -24,63 +24,66 @@
   <script>
     (function() {
 
-  var output = document.querySelector('.output'),
-    input = document.querySelector('input'),
-    button = document.querySelector('button'),
-    avatar = document.querySelector('.avatar'),
-    presence = document.querySelector('.presence');
-  var channel = 'simple-chat';
+var output = document.querySelector('.output'),
+input = document.querySelector('input'),
+button = document.querySelector('button'),
+avatar = document.querySelector('.avatar'),
+presence = document.querySelector('.presence');
+var channel = 'simple-chat';
 
-  // Assign a random avatar in random color
-  avatar.className = 'face-' + ((Math.random() * 13 + 1) >>> 0) + ' color-' + ((Math.random() * 10 + 1) >>> 0);
+// Assign a random avatar in random color
+avatar.className = 'face-' + ((Math.random() * 13 + 1) >>> 0) + ' color-' + ((Math.random() * 10 + 1) >>> 0);
 
-  var p = PUBNUB.init({
-    subscribe_key: 'sub-c-0492f982-aa36-11e7-a852-92b7c98bd364',
-    publish_key: 'pub-c-587c23d8-5838-400a-b0e5-5701b3eb72e3',
-    ssl: true
-  });
+var p = PUBNUB.init({
+subscribe_key: 'sub-c-0492f982-aa36-11e7-a852-92b7c98bd364',
+publish_key: 'pub-c-587c23d8-5838-400a-b0e5-5701b3eb72e3',
+ssl: true
+});
 
-  p.subscribe({
-    channel: channel,
-    callback: function(m) {
-      output.innerHTML = '<p><i class="' + m.avatar + '"></i><span>' + m.text + '</span></p>' + output.innerHTML;
-    },
-    presence: function(m) {
-      if (m.occupancy > 1) {
-        presence.textContent = m.occupancy + ' people online';
-      } else {
-        presence.textContent = 'Nobody else is online';
-      }
-    }
-  });
+p.subscribe({
+channel: channel,
+callback: function(m) {
+output.innerHTML = '
 
-  input.addEventListener('keyup', function(e) {
-    (e.keyCode || e.charCode) === 13 && send()
-  }, false);
- button.addEventListener('click', send, false);
+' + m.text + '
 
-  function send() {
-    if(1 ==1){
-      p.publish({
-      channel: channel,
-      message: {
-        avatar: avatar.className,
-        text: input.value
-      },
-      callback: function(){input.value = '';}
-    });
-    }
-    else{
-      p.publish({
-      channel: channel,
-      message: {
-        avatar: avatar.className,
-        text: input.value
-      },
-      callback: function(){input.value = '';}
-    });
-    }
-  }
+' + output.innerHTML;
+},
+presence: function(m) {
+if (m.occupancy > 1) {
+presence.textContent = m.occupancy + ' people online';
+} else {
+presence.textContent = 'Nobody else is online';
+}
+}
+});
+input.addEventListener('keyup', function(e) {
+(e.keyCode || e.charCode) === 13 && send()
+}, false);
+button.addEventListener('click', send, false);
+
+function send() {
+if(1 ==1){
+p.publish({
+channel: channel,
+message: {
+avatar: avatar.className,
+text: input.value
+},
+callback: function(){input.value = '';}
+});
+}
+else{
+p.publish({
+channel: channel,
+message: {
+avatar: avatar.className,
+text: input.value
+},
+callback: function(){input.value = '';}
+});
+}
+}
 
 })();
   </script>

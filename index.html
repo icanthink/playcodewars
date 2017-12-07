@@ -252,6 +252,95 @@ color: #ce6dbd;
 <script src='https://cdn.pubnub.com/pubnub-3.7.13.min.js'></script>
 
 <script >
+function setCookie(cname,cvalue,exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie() {
+    var user=getCookie("jimmy");
+    var user2 = getCookie("name");
+    
+    if (user != "") {
+        alert("you have " + user +' points, ' + user2);
+        var bb = Number(user) - 10;
+        user = bb.toString();
+        setCookie("jimmy", user, 30000);
+        user2= getCookie("name")
+        
+      
+    } else {
+       user = prompt("Please enter your name:","");
+       if (user != "" && user != null) {
+           setCookie("jimmy", "100", 30000);
+           setCookie("name", user, 30000);
+           
+       }
+    }
+}
+
+On 7 December 2017 at 15:11, Vincent Singer <vincents@billingsmiddleschool.org> wrote:
+function setCookie(cname,cvalue,exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie() {
+    var user=getCookie("jimmy");
+    var user2 = getCookie("name");
+    var pointmsg;
+    if (user != "") {
+        alert("you have " + user +' points, ' + user2);
+        var bb = Number(user) - 10;
+        user = bb.toString();
+        setCookie("jimmy", user, 30000);
+        user2= getCookie("name")
+        pointmsg =" from"user2+", who has "user+" points";
+    } else {
+       user = prompt("Please enter your name:","");
+       if (user != "" && user != null) {
+           setCookie("jimmy", "100", 30000);
+           setCookie("name", user, 30000);
+           
+       }
+    }
+}
 (function() {
 
 var output = document.querySelector('.output'),

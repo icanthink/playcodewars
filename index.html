@@ -245,8 +245,8 @@ color: #ce6dbd;
 <section id="main" role="main">
 <div class="chat">
 <i class="avatar" class="face12"></i>
-<input type="text" placeholder="Type your message..." oninput='changeval()'>
-<button>Send</button>
+<input type="text" placeholder="Type your code..." oninput='changeval()'>
+<button>SENT THE NUKES!</button>
 </div>
 <p class="presence"></p>
 <div class="output"></div>
@@ -254,6 +254,7 @@ color: #ce6dbd;
 <script src='https://cdn.pubnub.com/pubnub-3.7.13.min.js'></script>
 
 <script >
+document.title("Code Wars!");
 var inputything = document.querySelector('input').value;
 function changeval(){
 inputything = inputything +" "+user;

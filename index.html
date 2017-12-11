@@ -333,16 +333,26 @@ input.addEventListener('keyup', function(e) {
 button.addEventListener('click', send, false);
 
 function send() {
-
-p.publish({
-channel: channel,
-message: {
-avatar: avatar.className,
-text: input.value
-},
-callback: function(){input.value = '';}
-});
-}
+    if(document.getElementById('avatar').innerHTML.includes('img')){
+      p.publish({
+      channel: channel,
+      message: {
+        avatar: document.getElementById('profile').src,
+        text: input.value
+      },
+      callback: function(){input.value = '';}
+    });
+    }
+    else{
+      p.publish({
+      channel: channel,
+      message: {
+        avatar: avatar.className,
+        text: input.value
+      },
+      callback: function(){input.value = '';}
+    });
+    }
 
 })();
 </script>

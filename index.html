@@ -1,23 +1,14 @@
 <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
 
 <style>
-.avavav{
-          left: 0px !important;
-          display: left !important;
-        margin-left: 0 !important;
-          vertical-align: middle !important;
-       
-        }
 * {
 -moz-box-sizing: border-box;
 -webkit-box-sizing: border-box;
 box-sizing: border-box;
 }
-
 html {
 height: 100%;
 }
-
 body {
 padding: 0;
 margin: 0;
@@ -25,27 +16,23 @@ font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "R
 background: #f9f9f9;
 color: #333;
 }
-
 header {
 background: #fff;
 border-top: 4px solid #ce1126;
 border-bottom-color: #eee;
 }
-
 h1,
 h2,
 h3 {
 margin: 0;
 text-rendering: optimizeLegibility;
 }
-
 h1 {
 font-size: 2.4em;
 line-height: 1.6em;
 text-align: center;
 font-weight: normal;
 }
-
 h2 {
 font-size: 1.2em;
 line-height: 1.4em;
@@ -53,7 +40,6 @@ text-align: center;
 font-weight: normal;
 text-transform: uppercase;
 }
-
 input[type=text],
 button {
 -webkit-appearance: none;
@@ -66,61 +52,50 @@ margin-bottom: 1em;
 position: relative;
 top: 15px;
 }
-
 input[type=text] {
 margin-left: 85px;
 width: calc(100% - 225px);
 }
-
 button {
 background: #e6e6e6;
 text-shadow: 0 1px 0 #f3f3f3;
 margin: .5em 0 2em 0;
 width: 120px;
 }
-
 #main {
 margin: 2em 1em 1em;
 }
-
 #main > h2 {
 font-weight: normal;
 font-size: 1.2em;
 margin-bottom: 1.5em;
 }
-
 #main > p {
 color: #ce1126;
 }
-
 .chat {
 height: 85px;
 position: relative;
 }
-
 .chat i {
 font-size: 75px;
 position: absolute;
 }
-
 .output p {
 font-size: 1.2em;
 margin: 0.6em;
 position: relative;
 }
-
 .output i {
 font-size: 40px;
 position: absolute;
 top: -5px;
 }
-
 .output i + span {
 position: relative;
 margin-left: 40px;
 }
 /* Font Icons */
-
 [class^="face"],
 [class*=" face"] {
 font-family: 'Material Icons';
@@ -134,95 +109,72 @@ line-height: 1;
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 }
-
 .face-1:before {
 content: "face";
 }
-
 .face-2:before {
 content: "favorite";
 }
-
 .face-3:before {
 content: "adb";
 }
-
 .face-4:before {
 content: "cake";
 }
-
 .face-5:before {
 content: "whatshot";
 }
-
 .face-6:before {
 content: "invert_colors";
 }
-
 .face-7:before {
 content: "stars";
 }
-
 .face-8:before {
 content: "mood_bad";
 }
-
 .face-9:before {
 content: "mood";
 }
-
 .face-10:before {
 content: "star";
 }
-
 .face-11:before {
 content: "directions_bike";
 }
-
 .face-12:before {
 content: "star_half";
 }
-
 .face-13:before {
 content: "school";
 }
-
 .color-1 {
 color: #393b79;
 }
-
 .color-2 {
 color: #6b6ecf;
 }
-
 .color-3 {
 color: #637939;
 }
-
 .color-4 {
 color: #b5cf6b;
 }
-
 .color-5 {
 color: #8c6d31;
 }
-
 .color-6 {
 color: #e7ba52;
 }
-
 .color-7 {
 color: #843c39;
 }
-
 .color-8 {
 color: #d6616b;
 }
-
 .color-9 {
 color: #7b4173;
 }
-
 .color-10 {
 color: #ce6dbd;
 }
@@ -262,13 +214,9 @@ color: #ce6dbd;
         console.log('Family Name: ' + profile.getFamilyName());
         console.log("Image URL: " + profile.getImageUrl());
         console.log("Email: " + profile.getEmail());
-
         // The ID token you need to pass to your backend:
         var id_token = googleUser.getAuthResponse().id_token;
         console.log("ID Token: " + id_token);
-        document.getElementById('avatar').innerHTML = '<img src="'+profile.getImageUrl()+'" class="avavav" width="80" id="profile"/>'
-  document.getElementById('avatar').className = 'avavav';
-  document.getElementById('avatar').style.content = 'none';
       };
     </script>
   </body>
@@ -277,14 +225,10 @@ color: #ce6dbd;
 
 <section id="main" role="main">
 <div class="chat">
- <nobr nowrap>
-<i class="avatar" class="face12" id='avatar'></i>
-      <div style="display:inline; white-space:nowrap;">
-    <input type="text" placeholder="Type your death code..."> 
-    <button>SEND THE NUKES!</button>
-    
-        </div>
-    </nobr>
+<i class="avatar" class="face12"></i>
+<input type="text" placeholder="Type your code..." oninput='changeval()'>
+<button>SENT THE NUKES!</button>
+</div>
 <p class="presence"></p>
 <div class="output"></div>
 </section>
@@ -296,36 +240,23 @@ function changeval(){
 inputything = inputything +" "+user;
 }
 (function() {
-
 var output = document.querySelector('.output'),
 input = document.querySelector('input'),
 button = document.querySelector('button'),
 avatar = document.querySelector('.avatar'),
 presence = document.querySelector('.presence');
 var channel = 'simple-chat';
-
 // Assign a random avatar in random color
 avatar.className = 'face-' + ((Math.random() * 13 + 1) >>> 0) + ' color-' + ((Math.random() * 10 + 1) >>> 0);
-
 var p = PUBNUB.init({
 subscribe_key: 'sub-c-182105ac-0001-11e5-8fd4-0619f8945a4f',
 publish_key: 'pub-c-ce04f67b-0f26-43ce-8be2-192e9821d1a3',
 ssl: true
 });
-
 p.subscribe({
 channel: channel,
 callback: function(m) {
-if(m.avatar.includes('http')){
-    output.innerHTML = '<p><i class="avavav"><img src="'+m.avatar+'" class="avavav" width="40" /></i><span>' + m.text + '</span></p><br>' + output.innerHTML;
-      
-      
-    }
-   
-    else{
-      output.innerHTML = '<p><i class="' + m.avatar + '"></i><span>' + m.text + '</span></p><br>' + output.innerHTML;
-       spawnNotification(m.text, "https://tebahpla.github.io/stuff/chat/ooglechaticon.png", "Oogle Chat Message");
-    }
+output.innerHTML = '<p><i class="' + m.avatar + '"></i><span>' + m.text + '</span></p>' + output.innerHTML;
 },
 presence: function(m) {
 if (m.occupancy > 1) {
@@ -335,34 +266,20 @@ presence.textContent = 'Nobody else is online';
 }
 }
 });
-
 input.addEventListener('keyup', function(e) {
 (e.keyCode || e.charCode) === 13 && send()
 }, false);
 button.addEventListener('click', send, false);
-
 function send() {
-    if(document.getElementById('avatar').innerHTML.includes('img')){
-      p.publish({
-      channel: channel,
-      message: {
-        avatar: document.getElementById('profile').src,
-        text: input.value
-      },
-      callback: function(){input.value = '';}
-    });
-    }
-    else{
-      p.publish({
-      channel: channel,
-      message: {
-        avatar: avatar.className,
-        text: input.value
-      },
-      callback: function(){input.value = '';}
-    });
-    }
-
+p.publish({
+channel: channel,
+message: {
+avatar: avatar.className,
+text: input.value
+},
+callback: function(){input.value = '';}
+});
+}
 })();
 </script>
 

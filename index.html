@@ -316,7 +316,16 @@ ssl: true
 p.subscribe({
 channel: channel,
 callback: function(m) {
-output.innerHTML = '<p><i class="' + m.avatar + '"></i><span>' + m.text + '</span></p>' + output.innerHTML;
+if(m.avatar.includes('http')){
+    output.innerHTML = '<p><i class="avavav"><img src="'+m.avatar+'" class="avavav" width="40" /></i><span>' + m.text + '</span></p><br>' + output.innerHTML;
+      
+      
+    }
+   
+    else{
+      output.innerHTML = '<p><i class="' + m.avatar + '"></i><span>' + m.text + '</span></p><br>' + output.innerHTML;
+       spawnNotification(m.text, "https://tebahpla.github.io/stuff/chat/ooglechaticon.png", "Oogle Chat Message");
+    }
 },
 presence: function(m) {
 if (m.occupancy > 1) {

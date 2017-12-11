@@ -1,6 +1,13 @@
 <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
 
 <style>
+.avavav{
+          left: 0px !important;
+          display: left !important;
+        margin-left: 0 !important;
+          vertical-align: middle !important;
+       
+        }
 * {
 -moz-box-sizing: border-box;
 -webkit-box-sizing: border-box;
@@ -259,6 +266,9 @@ color: #ce6dbd;
         // The ID token you need to pass to your backend:
         var id_token = googleUser.getAuthResponse().id_token;
         console.log("ID Token: " + id_token);
+        document.getElementById('avatar').innerHTML = '<img src="'+profile.getImageUrl()+'" class="avavav" width="80" id="profile"/>'
+  document.getElementById('avatar').className = 'avavav';
+  document.getElementById('avatar').style.content = 'none';
       };
     </script>
   </body>

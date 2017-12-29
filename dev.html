@@ -1,0 +1,327 @@
+<script>var _bftn_options = { theme: 'glitch' };</script><script src="https://widget.battleforthenet.com/widget.js" async></script>
+<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+
+<style>
+* {
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+}
+html {
+height: 100%;
+}
+body {
+padding: 0;
+margin: 0;
+font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Roboto Light", "Segoe UI Web Light", "Segoe UI Light", "Segoe UI Web Regular", "Segoe UI", Helvetica, Arial, sans-serif;
+background: #f9f9f9;
+color: #333;
+}
+header {
+background: #fff;
+border-top: 4px solid #ce1126;
+border-bottom-color: #eee;
+}
+h1,
+h2,
+h3 {
+margin: 0;
+text-rendering: optimizeLegibility;
+}
+h1 {
+font-size: 2.4em;
+line-height: 1.6em;
+text-align: center;
+font-weight: normal;
+}
+h2 {
+font-size: 1.2em;
+line-height: 1.4em;
+text-align: center;
+font-weight: normal;
+text-transform: uppercase;
+}
+input[type=text],
+button {
+-webkit-appearance: none;
+-moz-appearance: none;
+border: 1px solid #ddd;
+color: #333;
+font-size: 1em;
+padding: .7em 1em;
+margin-bottom: 1em;
+position: relative;
+top: 15px;
+}
+input[type=text] {
+margin-left: 85px;
+width: calc(100% - 225px);
+}
+button {
+background: #e6e6e6;
+text-shadow: 0 1px 0 #f3f3f3;
+margin: .5em 0 2em 0;
+width: 120px;
+}
+#main {
+margin: 2em 1em 1em;
+}
+#main > h2 {
+font-weight: normal;
+font-size: 1.2em;
+margin-bottom: 1.5em;
+}
+#main > p {
+color: #ce1126;
+}
+.chat {
+height: 85px;
+position: relative;
+}
+.chat i {
+font-size: 75px;
+position: absolute;
+}
+.output p {
+font-size: 1.2em;
+margin: 0.6em;
+position: relative;
+}
+.output i {
+font-size: 40px;
+position: absolute;
+top: -5px;
+}
+.output i + span {
+position: relative;
+margin-left: 40px;
+}
+/* Font Icons */
+[class^="face"],
+[class*=" face"] {
+font-family: 'Material Icons';
+speak: none;
+font-style: normal;
+font-weight: normal;
+font-variant: normal;
+text-transform: none;
+line-height: 1;
+/* Better Font Rendering =========== */
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+.face-1:before {
+content: "face";
+}
+.face-2:before {
+content: "favorite";
+}
+.face-3:before {
+content: "adb";
+}
+.face-4:before {
+content: "cake";
+}
+.face-5:before {
+content: "whatshot";
+}
+.face-6:before {
+content: "invert_colors";
+}
+.face-7:before {
+content: "stars";
+}
+.face-8:before {
+content: "mood_bad";
+}
+.face-9:before {
+content: "mood";
+}
+.face-10:before {
+content: "star";
+}
+.face-11:before {
+content: "directions_bike";
+}
+.face-12:before {
+content: "star_half";
+}
+.face-13:before {
+content: "school";
+}
+.color-1 {
+color: #393b79;
+}
+.color-2 {
+color: #6b6ecf;
+}
+.color-3 {
+color: #637939;
+}
+.color-4 {
+color: #b5cf6b;
+}
+.color-5 {
+color: #8c6d31;
+}
+.color-6 {
+color: #e7ba52;
+}
+.color-7 {
+color: #843c39;
+}
+.color-8 {
+color: #d6616b;
+}
+.color-9 {
+color: #7b4173;
+}
+.color-10 {
+color: #ce6dbd;
+}
+</style>
+
+</head>
+
+<body translate="no" >
+
+<html>
+<head>
+<h1>Code Wars!</h1>
+</head>
+<body onload='checkCookie()'>
+<center>
+  Rules: Haha, what are rules! (this bassically means their are no rules)
+  How to play: Whenever you load up the web page, you will loose 10 points. Enter code to crash other people so they loose points joining. Every time something is you get .1 points. 
+</center>
+<header>
+<h1>CODEWARS!</h1>
+<h2>Jack was here</h2>
+<h2>GL HF DD!</h2>
+  <h4>While playing CodeWars your identity will be kept a secret</h4>
+  <h2>Lots of credit to Vincent!!!</h2>
+  <html lang="en">
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="851594728811-slt1ngc4b3th5g9u728m31me0m4tvpt5.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+  </head>
+  <body>
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+    <script>
+      var a = 1
+      function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+      };
+      function setCookie(cname,cvalue,exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+function checkCookie() {
+    var user=getCookie("points");
+    if (user != "") {
+        alert("you have " + user+" points");
+        setCookie("points", user, 30);
+       
+        
+    } else {
+       user = 100;
+   
+           setCookie("points", user, 30);
+       
+    }
+}
+    </script>
+  </body>
+<script src='https://cdn.pubnub.com/pubnub-3.7.13.min.js'></script> <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</header>
+
+<section id="main" role="main">
+<div class="chat">
+<i class="avatar" class="face12"></i>
+<input type="text" placeholder="Type your code..." oninput='changeval()'>
+<button>SENT THE NUKES!</button>
+</div>
+<p class="presence"></p>
+<div class="output"></div>
+</section>
+<script src='https://cdn.pubnub.com/pubnub-3.7.13.min.js'></script>
+
+<script >
+var inputything = document.querySelector('input').value;
+function changeval(){
+inputything = inputything +" "+user;
+}
+(function() {
+var output = document.querySelector('.output'),
+input = document.querySelector('input'),
+button = document.querySelector('button'),
+avatar = document.querySelector('.avatar'),
+presence = document.querySelector('.presence');
+var channel = 'simple-chat';
+// Assign a random avatar in random color
+avatar.className = 'face-' + ((Math.random() * 13 + 1) >>> 0) + ' color-' + ((Math.random() * 10 + 1) >>> 0);
+var p = PUBNUB.init({
+subscribe_key: 'sub-c-182105ac-0001-11e5-8fd4-0619f8945a4f',
+publish_key: 'pub-c-ce04f67b-0f26-43ce-8be2-192e9821d1a3',
+ssl: true
+});
+p.subscribe({
+channel: channel,
+callback: function(m) {
+output.innerHTML = '<p><i class="' + m.avatar + '"></i><span>' + m.text + '</span></p>' + output.innerHTML;
+},
+presence: function(m) {
+if (m.occupancy > 1) {
+presence.textContent = m.occupancy + ' people online';
+} else {
+presence.textContent = 'Nobody else is online';
+}
+}
+});
+input.addEventListener('keyup', function(e) {
+(e.keyCode || e.charCode) === 13 && send()
+}, false);
+button.addEventListener('click', send, false);
+function send() {
+p.publish({
+channel: channel,
+message: {
+avatar: avatar.className,
+text: input.value
+},
+callback: function(){input.value = '';}
+});
+}
+})();
+</script>
+
+
+</body>
+</html>
